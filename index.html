@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagline: interoffice messaging for Windows</title>
+<meta name="description" content="Flagline is a small, serverless messenger for Windows PCs on one office network: pop-up notes, urgent alerts, groups, quick buttons and hidden details.">
+<link rel="icon" type="image/png" href="images/flagline-logo.png">
+<style>
+  :root { --text: #1d2327; --muted: #5b6770; --accent: #2563eb; --bg: #ffffff; --line: #dde4e6; --panel: #f4f6f9; }
+  @media (prefers-color-scheme: dark) { :root { --text: #e8ecee; --muted: #a3afb5; --accent: #7aa7ff; --bg: #15191b; --line: #2e3a3e; --panel: #1d2326; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
+  header img { width: 56px; height: 56px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0; }
+  h2 { font-size: 19px; margin: 32px 0 8px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .meta { color: var(--muted); margin: 0 0 24px; }
+  .lead { font-size: 18px; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  a { color: var(--accent); }
+  .download { display: inline-block; margin: 4px 0 8px; padding: 10px 18px; border-radius: 6px; background: var(--accent); color: var(--bg); font-weight: 600; text-decoration: none; }
+  figure { margin: 18px 0 24px; }
+  figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  .note { background: var(--panel); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="images/flagline-logo.png" alt="">
+    <h1>Flagline</h1>
+  </header>
+  <p class="meta">By Dr. Earls Optometry Tools</p>
+  <p class="lead">Interoffice messaging for Windows PCs on one office network. Every workstation has a name and can join groups, so you can message one PC, a group, or everyone. No server and no internet: the PCs find each other on their own.</p>
+
+  <h2>Download</h2>
+  <p>For Windows 10 and 11. This link always gives the newest version.</p>
+  <p><a class="download" href="https://github.com/drnickearls/flagline-releases/releases/latest/download/Flagline.exe">Download Flagline.exe</a></p>
+  <p>Also get <a href="https://github.com/drnickearls/flagline-releases/releases/latest/download/firewall.bat">firewall.bat</a> for the one-time firewall setup. Windows may say it protected your PC: choose <strong>More info</strong>, then <strong>Run anyway</strong>. Earlier versions are on the <a href="https://github.com/drnickearls/flagline-releases/releases">releases page</a>.</p>
+
+  <h2>What it does</h2>
+  <figure>
+    <img src="images/flagline-popups.png" alt="Flagline sticky notes on a Windows desktop, including a red urgent note and a note with hidden details">
+    <figcaption>Every message pops up as a sticky note and stays until it's right-clicked. Urgent notes are big, red and flashing.</figcaption>
+  </figure>
+  <ul>
+    <li><strong>Sticky notes</strong> that stay on screen until right-clicked, which tells the sender it was seen. Double-click a note to reply.</li>
+    <li><strong>Urgent</strong> messages are big and red in the middle of the screen, flash, and play the Windows alert. They get through Do not disturb.</li>
+    <li><strong>Hidden details</strong>: the note shows only the message, such as "Room 4 ready", and the details appear when someone clicks it.</li>
+    <li><strong>Quick buttons</strong> that add up: click "Dr. Smith", then "Room 4 ready". The office list comes from a shared folder, and each PC can change its own.</li>
+    <li><strong>Chat</strong> windows for a short back-and-forth that doesn't disappear when a note is dismissed.</li>
+    <li><strong>Groups</strong> such as Front Desk or Clinical, plus Everyone.</li>
+    <li>Messages wait for a PC that's off and arrive when it's back.</li>
+  </ul>
+  <figure>
+    <img src="images/flagline-main-window.png" alt="The Flagline main window with groups and workstations on the left and a conversation on the right">
+    <figcaption>The main window: groups and workstations on the left, the conversation and quick buttons on the right.</figcaption>
+  </figure>
+  <figure>
+    <img src="images/flagline-compose.png" alt="Composing a message with quick buttons and a hidden details box">
+    <figcaption>Click quick buttons, press Tab to add hidden details, then Send.</figcaption>
+  </figure>
+  <p class="note">Names in these pictures are made up.</p>
+
+  <h2>Install</h2>
+  <ol>
+    <li>Put <code>Flagline.exe</code> and <code>firewall.bat</code> in a folder the PC's user can write to, such as <code>C:\Flagline\</code>. Not Program Files, because updates need to replace the file.</li>
+    <li>Right-click <code>firewall.bat</code> and choose <strong>Run as administrator</strong>, once per PC. It lets Flagline accept traffic only from the office network.</li>
+    <li>Run Flagline and open <strong>⚙ Settings</strong>. Set the workstation name, its groups, the shared folder (for example <code>\\server\share\Flagline</code>) and the <strong>office key</strong>. Use the same office key on every PC.</li>
+  </ol>
+  <p>Flagline starts with Windows and sits in the system tray.</p>
+
+  <h2>The office key</h2>
+  <p>The office key encrypts everything Flagline sends and the history on each PC. Use at least 16 characters, ideally 4 or 5 random words. Don't use a name, a birthday, the office name, or a password used anywhere else. Share it in person, and change it on every PC when someone who knew it leaves. Without one, Flagline uses a default key that is publicly known, so always set your own.</p>
+
+  <h2>Updates</h2>
+  <p>Copy the new <code>Flagline.exe</code> and <code>version.txt</code> from a release into the shared folder. Each PC checks when it starts and every hour, then updates and restarts itself. Open notes and waiting messages are kept.</p>
+
+  <h2>Privacy</h2>
+  <p>Flagline only talks to other Flagline PCs on the office network. It sends nothing to the internet and has no accounts, tracking or analytics. Traffic is encrypted with AES-256 using the office key, and each PC's 90-day history is encrypted on disk.</p>
+
+  <h2>About</h2>
+  <p>Contact: <a href="mailto:drnickearls@gmail.com">drnickearls@gmail.com</a></p>
+</main>
+</body>
+</html>

@@ -5,7 +5,9 @@ send to one workstation, a group, or **Everyone**. No server: PCs on the office 
 find each other automatically.
 
 This repository holds the public downloads. Get the latest `Flagline.exe` from
-**[Releases](../../releases/latest)**.
+**[Releases](../../releases/latest)**, or see the website: https://drnickearls.github.io/flagline-releases/
+
+![Flagline sticky notes on a desktop](images/flagline-popups.png)
 
 ## What it does
 
